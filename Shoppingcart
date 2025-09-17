@@ -1,0 +1,34 @@
+class smart: 
+    def __init__(self):
+        self.quantity = []
+        
+    def add_quantity(self, item_name,qty):
+        quantity = (item_name,qty)
+        self.quantity.append(quantity)
+        
+    def remove_quantity(self, quantity_name):
+        for quantity in self.quantity:
+            if quantity[0] == quantity_name:
+                 self.quantity.remove(quantity)
+                 break
+                
+    def calculate_total(self):
+        total = 0
+        for quantity in self.quantity:
+            total += quantity[1]
+        return total
+s = smart ()
+s.add_quantity("Apple", 100)
+s.add_quantity("Mango", 300)
+s.add_quantity("Banana", 60)
+print("Current quantity in cart:")
+for quantity in s.quantity:
+    print(quantity[0], "-", quantity[1])
+total_qty = s.calculate_total()
+print("Total Quantity:", total_qty)
+s.remove_quantity("Mango")
+print("\nUpdated Items in cart after removing Mango:")
+for item in s.quantity:
+    print(item[0],"-", item[1])
+total_qty = s.calculate_total()
+print("Total Quantity:",total_qty)
