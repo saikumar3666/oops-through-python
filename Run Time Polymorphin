@@ -1,1 +1,20 @@
+class employee():
+    def __init__(self,name,age,id,salary):
+        self.name=name
+        self.age=age
+        self.salary=salary
+        self.id=id
+        def earn(self):
+            pass
+class childemployee(employee):
+    def earn(self):
+        print("no money")
+class childemployee1(employee):
+    def earn(self):
+        print("has money")
 
+c=childemployee("sai",20,100,3000)
+c.earn()
+
+d=childemployee("kumar",21,101,6000)
+d.earn()
